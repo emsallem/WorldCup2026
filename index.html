@@ -18,6 +18,10 @@
     #daily table{table-layout:fixed}#daily th:nth-child(1){width:74px}#daily th:nth-child(2){width:118px}#daily th:nth-child(3){width:310px}#daily th:nth-child(4),#daily th:nth-child(5){width:96px}#daily th:nth-child(6){width:130px}#daily .explain{max-width:285px;white-space:normal}#daily .why{white-space:normal;overflow-wrap:break-word}
     /* Cartes mobile pour la vue Jour par jour */
     .daily-card{display:none}
+    .day-jump{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px;border-bottom:1px solid var(--line);background:#0a1b30;position:sticky;top:82px;z-index:4}
+    .day-jump-label{color:var(--muted);font-weight:750;margin-right:4px;align-self:center}
+    .day-jump a{color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;background:var(--panel-2);padding:6px 10px;font-size:.86rem}
+    .day-jump a:hover,.day-jump a:focus{background:#137d71;border-color:#45cbb6;color:white;outline:none}
     @media(max-width:480px){
       #daily table{display:none!important}
       .daily-card{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:8px;background:var(--panel-2);margin-bottom:8px;overflow:hidden}
@@ -39,7 +43,7 @@
     }
     .matches{display:grid;gap:10px;padding:12px}.match{display:grid;grid-template-columns:1.15fr auto 1.15fr;gap:10px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:12px;background:var(--panel-2)}.match.hypothetical,.node.hypothetical{border-style:dashed;background:linear-gradient(180deg,#132c4a,#0d233d)}.team{font-weight:750;min-width:0}.team small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.flag{display:inline-block;width:1.45em;text-align:center;margin-right:5px}.away{text-align:right}.score{text-align:center;min-width:132px;border-radius:8px;padding:8px 10px;background:var(--soft);color:var(--accent);font-weight:850}.score.real{background:var(--warn);color:#ffd166}.score.exact{background:#123d25;color:#86efac}.score.partial{background:#403512;color:#ffd166}.score.wrong{background:#471b25;color:#ff9aa8}.score small{display:block;font-weight:650}.prediction-line{margin-top:3px;font-size:.78rem;color:inherit;opacity:.9}.meta,.why,.explain{grid-column:1/-1}.meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}.pill{border:1px solid var(--line);border-radius:999px;background:#0a1b30;color:var(--muted);padding:3px 8px}.pill.exact{border-color:#438c5a;background:#123d25;color:#86efac}.pill.partial{border-color:#987b28;background:#403512;color:#ffd166}.pill.wrong{border-color:#a74e5a;background:#471b25;color:#ff9aa8}.pill.hypothetical{border-style:dashed;border-color:#6e8bae;color:#c7d8ee}.explain{border-top:1px solid var(--line);padding-top:8px}.explain summary{cursor:pointer;color:var(--accent);font-weight:750}.why{color:#d6e0ec;font-size:.91rem;line-height:1.35;margin-top:7px}
     .bracket{padding:14px}.rounds{display:grid;gap:10px}.round{border:1px solid var(--line);border-radius:8px;background:#0a1b30;overflow:hidden}.round summary{cursor:pointer;padding:13px 14px;color:var(--ink);font-weight:850;display:flex;justify-content:space-between;gap:10px}.round summary span{color:var(--muted);font-weight:650}.round-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;padding:0 12px 12px}.node{border:1px solid var(--line);border-radius:8px;background:var(--panel-2);padding:10px;min-height:96px}.node .score{margin:7px 0;min-width:0}.winner{font-weight:850;color:var(--accent)}.hidden{display:none}.note{color:var(--muted);line-height:1.45}
-    @media(max-width:820px){header{min-height:28vh;padding:22px 14px}main{width:calc(100% - 16px);margin-top:-16px}.toolbar{position:static;grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:repeat(2,1fr)}.tabs button{width:100%;padding:0 8px}.summary{grid-template-columns:repeat(2,1fr)}.half,.third{grid-column:span 12}.match{grid-template-columns:1fr}.away{text-align:left}.score{width:100%;min-width:0}.meta,.why,.explain{grid-column:auto}table{display:block;overflow-x:auto;white-space:nowrap}#daily table{min-width:824px}#daily td,#daily th{font-size:.88rem}#daily .explain summary{font-size:.88rem}#daily .why{font-size:.88rem;line-height:1.35}th,td{font-size:.88rem;padding:8px 7px}.round-body{grid-template-columns:1fr}.bracket{padding:10px}}
+    @media(max-width:820px){.day-jump{position:static}.day-jump a{font-size:.82rem;padding:6px 9px}header{min-height:28vh;padding:22px 14px}main{width:calc(100% - 16px);margin-top:-16px}.toolbar{position:static;grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:repeat(2,1fr)}.tabs button{width:100%;padding:0 8px}.summary{grid-template-columns:repeat(2,1fr)}.half,.third{grid-column:span 12}.match{grid-template-columns:1fr}.away{text-align:left}.score{width:100%;min-width:0}.meta,.why,.explain{grid-column:auto}table{display:block;overflow-x:auto;white-space:nowrap}#daily table{min-width:824px}#daily td,#daily th{font-size:.88rem}#daily .explain summary{font-size:.88rem}#daily .why{font-size:.88rem;line-height:1.35}th,td{font-size:.88rem;padding:8px 7px}.round-body{grid-template-columns:1fr}.bracket{padding:10px}}
     @media(max-width:430px){h1{font-size:2rem}.lead{font-size:.96rem}.summary{grid-template-columns:1fr}.metric{min-height:72px}.metric strong{font-size:1.45rem}.panel h2{font-size:1rem;padding:12px}.matches{padding:10px}.match{padding:10px}.team,.score{font-size:.95rem}.tabs{grid-template-columns:1fr 1fr}button,select{min-height:42px}.toolbar{gap:9px}.bracket{padding:10px}}
   </style>
 </head>
@@ -74,13 +78,87 @@
       L:["2026-06-17T22:00:00+02:00","2026-06-18T01:00:00+02:00","2026-06-23T22:00:00+02:00","2026-06-24T01:00:00+02:00","2026-06-27T23:00:00+02:00","2026-06-27T23:00:00+02:00"]
     });
     const FIXTURES={A:[["Mexico","South Africa"],["South Korea","Czechia"],["Mexico","South Korea"],["Czechia","South Africa"],["Czechia","Mexico"],["South Africa","South Korea"]],B:[["Canada","Bosnia and Herzegovina"],["Qatar","Switzerland"],["Canada","Qatar"],["Switzerland","Bosnia and Herzegovina"],["Switzerland","Canada"],["Bosnia and Herzegovina","Qatar"]],C:[["Brazil","Morocco"],["Haiti","Scotland"],["Brazil","Haiti"],["Scotland","Morocco"],["Scotland","Brazil"],["Morocco","Haiti"]],D:[["United States","Paraguay"],["Australia","Turkey"],["United States","Australia"],["Turkey","Paraguay"],["Turkey","United States"],["Paraguay","Australia"]],E:[["Germany","Curacao"],["Ivory Coast","Ecuador"],["Germany","Ivory Coast"],["Ecuador","Curacao"],["Ecuador","Germany"],["Curacao","Ivory Coast"]],F:[["Netherlands","Japan"],["Sweden","Tunisia"],["Netherlands","Sweden"],["Tunisia","Japan"],["Tunisia","Netherlands"],["Japan","Sweden"]],G:[["Belgium","Egypt"],["Iran","New Zealand"],["Belgium","Iran"],["New Zealand","Egypt"],["New Zealand","Belgium"],["Egypt","Iran"]],H:[["Spain","Cape Verde"],["Saudi Arabia","Uruguay"],["Spain","Saudi Arabia"],["Uruguay","Cape Verde"],["Uruguay","Spain"],["Cape Verde","Saudi Arabia"]],I:[["France","Senegal"],["Iraq","Norway"],["France","Iraq"],["Norway","Senegal"],["Norway","France"],["Senegal","Iraq"]],J:[["Argentina","Algeria"],["Austria","Jordan"],["Argentina","Austria"],["Jordan","Algeria"],["Jordan","Argentina"],["Algeria","Austria"]],K:[["Portugal","DR Congo"],["Uzbekistan","Colombia"],["Portugal","Uzbekistan"],["Colombia","DR Congo"],["Colombia","Portugal"],["DR Congo","Uzbekistan"]],L:[["England","Croatia"],["Ghana","Panama"],["England","Ghana"],["Panama","Croatia"],["Panama","England"],["Croatia","Ghana"]]};
-    const PAIRS=[[0,1],[2,3],[0,2],[3,1],[3,0],[1,2]], state={matches:[],actuals:{}};
+    const PAIRS=[[0,1],[2,3],[0,2],[3,1],[3,0],[1,2]], state={matches:[],actuals:{},espnEvents:[],confirmedKO:[],unmatchedESPN:[]};
     const $=id=>document.getElementById(id), k=(a,b)=>[a,b].sort().join("|"), fmt=iso=>new Intl.DateTimeFormat("fr-FR",{timeZone:TZ,weekday:"short",day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}).format(new Date(iso)), dayKey=iso=>new Intl.DateTimeFormat("fr-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(iso)), dayLabel=iso=>new Intl.DateTimeFormat("fr-FR",{timeZone:TZ,weekday:"long",day:"2-digit",month:"long",year:"numeric"}).format(new Date(iso)), teamHTML=t=>`<span class="flag">${FLAGS[t]||"🏳️"}</span>${t}`;
+    const TEAM_ALIASES={
+      "usa":"United States","u s a":"United States","u s":"United States","us":"United States","united states":"United States","united states of america":"United States","america":"United States",
+      "tur":"Turkey","turkiye":"Turkey","turkiye national team":"Turkey","türkiye":"Turkey","turkey":"Turkey",
+      "bih":"Bosnia and Herzegovina","bosnia":"Bosnia and Herzegovina","bosnia herzegovina":"Bosnia and Herzegovina","bosnia-herzegovina":"Bosnia and Herzegovina","bosnia and herzegovina":"Bosnia and Herzegovina",
+      "cote d ivoire":"Ivory Coast","côte d ivoire":"Ivory Coast","ivory coast":"Ivory Coast",
+      "korea republic":"South Korea","republic of korea":"South Korea","south korea":"South Korea",
+      "czech republic":"Czechia","czechia":"Czechia","czr":"Czechia",
+      "dr congo":"DR Congo","congo dr":"DR Congo","d r congo":"DR Congo","cod":"DR Congo",
+      "cape verde":"Cape Verde","curacao":"Curacao","curaçao":"Curacao","new zealand":"New Zealand","south africa":"South Africa","saudi arabia":"Saudi Arabia"
+    };
+    const normName=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/&/g," and ").replace(/[^a-z0-9]+/g," ").trim();
+    function matchTeamName(name){
+      const n=normName(name); if(!n)return null; if(TEAM_ALIASES[n])return TEAM_ALIASES[n];
+      const teams=Object.values(GROUPS).flat();
+      return teams.find(t=>{const tn=normName(t); return tn===n||tn.includes(n)||n.includes(tn)})||null;
+    }
+    function teamFromCompetitor(c){
+      const t=c?.team||{};
+      return [t.displayName,t.shortDisplayName,t.name,t.location,t.abbreviation,c?.team?.abbreviation,c?.abbreviation].map(matchTeamName).find(Boolean)||null;
+    }
+    function teamsFromEventName(ev){
+      const raw=ev?.name||ev?.shortName||"";
+      const cleaned=raw.replace(/\s+\(.*?\)$/g,"");
+      const parts=cleaned.split(/\s+(?:vs\.?|v\.?|at|@|–|-|—)\s+/i).map(x=>x.trim()).filter(Boolean);
+      if(parts.length>=2)return [matchTeamName(parts[0]),matchTeamName(parts[1])];
+      return [null,null];
+    }
+    function eventTeams(ev){
+      const c=ev?.competitions?.[0]?.competitors||[];
+      let a=teamFromCompetitor(c[0]), b=teamFromCompetitor(c[1]);
+      if(!a||!b){const fromName=teamsFromEventName(ev); a=a||fromName[0]; b=b||fromName[1];}
+      return [a,b];
+    }
+    function isCompletedEvent(ev){
+      const type=ev?.status?.type||{}, txt=normName([type.name,type.description,type.detail,type.shortDetail,type.state].filter(Boolean).join(" "));
+      return !!(type.completed||type.name==="STATUS_FULL_TIME"||type.state==="post"||txt.includes("full time")||txt==="ft"||txt.includes("status full time"));
+    }
+    function stageFromDate(iso){
+      const t=new Date(iso).getTime(), d=(y,m,day,h=7)=>Date.UTC(y,m-1,day,h,0,0);
+      if(t>=d(2026,6,28)&&t<d(2026,7,4))return "16e";
+      if(t>=d(2026,7,4)&&t<d(2026,7,9))return "8e";
+      if(t>=d(2026,7,9)&&t<d(2026,7,14))return "Quart";
+      if(t>=d(2026,7,14)&&t<d(2026,7,18))return "Demi";
+      if(t>=d(2026,7,18)&&t<d(2026,7,19))return "3e place";
+      if(t>=d(2026,7,19)&&t<d(2026,7,20))return "Finale";
+      return null;
+    }
+    function stageFromEvent(ev){
+      const note=normName([ev?.season?.slug,ev?.competitions?.[0]?.altGameNote,ev?.name,ev?.shortName].filter(Boolean).join(" "));
+      if(note.includes("group"))return null;
+      if(note.includes("round of 32"))return "16e";
+      if(note.includes("round of 16")||note.includes("rd of 16"))return "8e";
+      if(note.includes("quarter"))return "Quart";
+      if(note.includes("semi"))return "Demi";
+      if(note.includes("3rd place")||note.includes("third place"))return "3e place";
+      if(note.includes("final"))return "Finale";
+      return stageFromDate(ev?.date);
+    }
+    function extractConfirmedKO(events){
+      const out=[], seen=new Set();
+      (events||[]).forEach(ev=>{const stage=stageFromEvent(ev); if(!stage)return; const [a,b]=eventTeams(ev); if(!a||!b||a===b)return; const key=`${stage}|${k(a,b)}`; if(seen.has(key))return; seen.add(key); out.push({stage,date:ev.date,home:a,away:b,confirmed:true,source:"ESPN"})});
+      return out.sort((a,b)=>new Date(a.date)-new Date(b.date));
+    }
     function strength(t){return ((100-Math.min(95,(R[t]||80)*1.05))*.48)+((F[t]||50)*.52)}
     function hist(a,b){return HISTORY[`${a}|${b}`]??(HISTORY[`${b}|${a}`]?-HISTORY[`${b}|${a}`]:0)}
+    function groupPerf(t){
+      const played=state.matches.filter(m=>m.stage==="Groupe"&&m.actual&&(m.home===t||m.away===t));
+      if(!played.length)return{played:0,adj:0,label:"aucune donnée de poules intégrée"};
+      let pts=0,gf=0,ga=0,expectedPts=0;
+      played.forEach(m=>{const isHome=m.home===t, s=m.actual, p=m.predicted; const forGoals=isHome?s.home:s.away, againstGoals=isHome?s.away:s.home; const predFor=isHome?p.home:p.away, predAgainst=isHome?p.away:p.home; gf+=forGoals; ga+=againstGoals; pts+=forGoals>againstGoals?3:forGoals===againstGoals?1:0; expectedPts+=predFor>predAgainst?3:predFor===predAgainst?1:0;});
+      const ppg=pts/played.length, gdpg=(gf-ga)/played.length, gfpg=gf/played.length, gapg=ga/played.length, surprise=(pts-expectedPts)/played.length;
+      const adj=Math.max(-10,Math.min(10,(ppg-1.35)*3.2+gdpg*2.4+(gfpg-1.25)*.9-(gapg-1.15)*1.1+surprise*1.8));
+      const label=`${played.length} match${played.length>1?"es":""} joué${played.length>1?"s":""}, ${pts} pt${pts>1?"s":""}, diff. ${gf-ga>=0?"+":""}${gf-ga}`;
+      return{played,pts,gf,ga,adj,label};
+    }
+    function effectiveStrength(t,stage="Groupe"){return strength(t)+(stage==="Groupe"?0:groupPerf(t).adj)}
     function seed(a,b){const d=SEED[`${a}|${b}`]; if(d)return{home:d[0],away:d[1],source:"résultat embarqué"}; const r=SEED[`${b}|${a}`]; return r?{home:r[1],away:r[0],source:"résultat embarqué"}:null}
-    function predict(a,b,stage="Groupe"){const diff=strength(a)-strength(b)+hist(a,b), abs=Math.abs(diff); let ha=1.15+Math.max(0,diff)/24, aw=1.15+Math.max(0,-diff)/24; if(abs>34){ha+=diff>0?.95:-.25; aw+=diff<0?.95:-.25} if(stage!="Groupe"){ha+=.08;aw+=.08} let home=Math.max(0,Math.round(ha)),away=Math.max(0,Math.round(aw)); if(stage!="Groupe"&&home==away){diff>=0?home++:away++} if(abs>42){if(diff>0)home=Math.max(home,4+Math.floor((abs-42)/18)); if(diff<0)away=Math.max(away,4+Math.floor((abs-42)/18))} return{home,away,diff:Math.round(diff),confidence:Math.min(93,50+Math.round(abs*.75))}}
-    function why(m){const p=m.predicted, better=p.diff>=0?m.home:m.away, gap=Math.abs(p.diff), ranks=`${m.home} rang FIFA ${R[m.home]||"n.d."}, ${m.away} rang FIFA ${R[m.away]||"n.d."}`; const lesson=m.actual?"Le score réel remplace le pronostic et modifie le tableau futur.":gap>30?"Écart de niveau net, score volontairement plus large.":gap<8?"Écart faible, match nul ou court écart plausible.":"Avantage sensible mais pas écrasant."; return `${better} ressort du modèle rang/forme. ${ranks}. ${lesson}`}
+    function predict(a,b,stage="Groupe"){const diff=effectiveStrength(a,stage)-effectiveStrength(b,stage)+hist(a,b), abs=Math.abs(diff); let ha=1.15+Math.max(0,diff)/24, aw=1.15+Math.max(0,-diff)/24; if(abs>34){ha+=diff>0?.95:-.25; aw+=diff<0?.95:-.25} if(stage!="Groupe"){ha+=.08;aw+=.08; const pa=groupPerf(a), pb=groupPerf(b); ha+=Math.max(-.35,Math.min(.45,(pa.adj-pb.adj)/24)); aw+=Math.max(-.35,Math.min(.45,(pb.adj-pa.adj)/24))} let home=Math.max(0,Math.round(ha)),away=Math.max(0,Math.round(aw)); if(stage!="Groupe"&&home==away){diff>=0?home++:away++} if(abs>42){if(diff>0)home=Math.max(home,4+Math.floor((abs-42)/18)); if(diff<0)away=Math.max(away,4+Math.floor((abs-42)/18))} return{home,away,diff:Math.round(diff),confidence:Math.min(96,50+Math.round(abs*.75))}}
+    function why(m){const p=m.predicted, better=p.diff>=0?m.home:m.away, gap=Math.abs(p.diff), ranks=`${m.home} rang FIFA ${R[m.home]||"n.d."}, ${m.away} rang FIFA ${R[m.away]||"n.d."}`; const lesson=m.actual?"Le score réel remplace le pronostic et modifie le tableau futur.":gap>30?"Écart de niveau net, score volontairement plus large.":gap<8?"Écart faible, match nul ou court écart plausible.":"Avantage sensible mais pas écrasant."; const perf=m.stage!=="Groupe"?` Dynamique des poules intégrée : ${m.home} (${groupPerf(m.home).label}, impact ${groupPerf(m.home).adj>=0?"+":""}${groupPerf(m.home).adj.toFixed(1)}), ${m.away} (${groupPerf(m.away).label}, impact ${groupPerf(m.away).adj>=0?"+":""}${groupPerf(m.away).adj.toFixed(1)}).`:""; return `${better} ressort du modèle rang/forme. ${ranks}. ${lesson}${perf}`}
     function actualFor(home,away){const a=state.actuals[k(home,away)]; if(a?.team0)return{home:a.team0===home?a.score0:a.score1,away:a.team0===home?a.score1:a.score0,source:a.source}; return a||seed(home,away)}
     function build(){state.matches=[]; Object.entries(FIXTURES).forEach(([g,fixtures])=>fixtures.forEach(([home,away],idx)=>{const actual=actualFor(home,away),predicted=predict(home,away); state.matches.push({id:`${g}${idx+1}`,stage:"Groupe",group:g,home,away,date:DATES[g][idx],actual,predicted})})); state.matches.sort((a,b)=>new Date(a.date)-new Date(b.date))}
     function outcome(s){return s.home>s.away?"H":s.home<s.away?"A":"D"}
@@ -91,69 +169,64 @@
     function kodate(start,idx){const d=new Date(`${start}T18:00:00+02:00`); d.setDate(d.getDate()+Math.floor(idx/4)); d.setHours(idx%2?21:18,0,0,0); return d.toISOString()}
     function win(m){const p=predict(m.home,m.away,m.stage);return p.home>=p.away?m.home:m.away} function lose(m){const p=predict(m.home,m.away,m.stage);return p.home<p.away?m.home:m.away}
     function kos(){
-      const q=qual(), used=new Set(), teamGroup=Object.fromEntries(q.all.map(x=>[x.team,x.group]));
-      const firsts=q.top.filter(x=>x.slot.endsWith("1")).map(x=>x.team);
-      const seconds=q.top.filter(x=>x.slot.endsWith("2")).map(x=>x.team);
-      const thirds=q.thirds.map(x=>x.team);
-      const pool=[...seconds,...thirds].filter((team,i,arr)=>arr.indexOf(team)===i);
-      function takeHome(i){const team=firsts[i]||q.all.find(x=>!used.has(x.team))?.team; used.add(team); return team}
-      function takeAway(home,preferThird=false){
-        const ordered=preferThird?[...thirds,...seconds]:[...pool];
-        let pick=ordered.find(t=>t!==home&&!used.has(t)&&teamGroup[t]!==teamGroup[home]);
-        if(!pick) pick=ordered.find(t=>t!==home&&!used.has(t));
-        if(!pick) pick=q.all.find(x=>x.team!==home&&!used.has(x.team))?.team;
-        if(!pick) pick=q.all.find(x=>x.team!==home)?.team;
-        used.add(pick);
-        return pick;
-      }
-      const r32=[];
-      for(let i=0;i<16;i++){
-        const home=i<12?takeHome(i):(q.all.find(x=>!used.has(x.team))?.team||firsts[i%firsts.length]);
-        used.add(home);
-        const away=takeAway(home,i%2===0);
-        r32.push({stage:"16e",date:kodate("2026-06-28",i),home,away});
-      }
-      const rounds=[r32];
-      ["8e","Quart","Demi","Finale"].forEach((stage,r)=>{
-        const prev=rounds.at(-1), next=[];
-        for(let i=0;i<prev.length;i+=2){
-          let home=win(prev[i]), away=win(prev[i+1]);
-          if(home===away) away=lose(prev[i+1])!==home?lose(prev[i+1]):lose(prev[i]);
-          next.push({stage,date:kodate(["2026-07-04","2026-07-09","2026-07-14","2026-07-19"][r],i/2),home,away});
-        }
-        rounds.push(next);
-      });
-      let thirdHome=lose(rounds[3][0]), thirdAway=lose(rounds[3][1]);
-      if(thirdHome===thirdAway) thirdAway=win(rounds[3][1])!==thirdHome?win(rounds[3][1]):win(rounds[3][0]);
-      return{rounds,third:{stage:"3e place",date:"2026-07-18T21:00:00+02:00",home:thirdHome,away:thirdAway}}
+      const q=qual(), teamGroup=Object.fromEntries(q.all.map(x=>[x.team,x.group]));
+      const firsts=q.top.filter(x=>x.slot.endsWith("1")).map(x=>x.team), seconds=q.top.filter(x=>x.slot.endsWith("2")).map(x=>x.team), thirds=q.thirds.map(x=>x.team), pool=[...seconds,...thirds].filter((team,i,arr)=>arr.indexOf(team)===i);
+      const confirmedFor=stage=>state.confirmedKO.filter(m=>m.stage===stage).sort((a,b)=>new Date(a.date)-new Date(b.date));
+      function addUnique(arr,m,used,max){if(!m?.home||!m?.away||m.home===m.away||used.has(m.home)||used.has(m.away)||arr.length>=max)return false; arr.push({...m}); used.add(m.home); used.add(m.away); return true}
+      function takeHome(used,i){let team=firsts.find(t=>!used.has(t))||q.all.find(x=>!used.has(x.team))?.team||firsts[i%Math.max(1,firsts.length)]; used.add(team); return team}
+      function takeAway(used,home,preferThird=false){const ordered=preferThird?[...thirds,...seconds]:[...pool]; let pick=ordered.find(t=>t!==home&&!used.has(t)&&teamGroup[t]!==teamGroup[home])||ordered.find(t=>t!==home&&!used.has(t))||q.all.find(x=>x.team!==home&&!used.has(x.team))?.team||q.all.find(x=>x.team!==home)?.team; used.add(pick); return pick}
+      const r32=[], usedR32=new Set(); confirmedFor("16e").forEach(m=>addUnique(r32,m,usedR32,16));
+      for(let i=r32.length;i<16;i++){const home=takeHome(usedR32,i), away=takeAway(usedR32,home,i%2===0); r32.push({stage:"16e",date:kodate("2026-06-28",i),home,away,confirmed:false})}
+      r32.sort((a,b)=>new Date(a.date)-new Date(b.date));
+      const rounds=[r32], stages=["8e","Quart","Demi","Finale"], starts=["2026-07-04","2026-07-09","2026-07-14","2026-07-19"];
+      stages.forEach((stage,r)=>{const prev=rounds.at(-1), target=Math.ceil(prev.length/2), next=[], used=new Set(); confirmedFor(stage).forEach(m=>addUnique(next,m,used,target)); for(let i=0;i<prev.length&&next.length<target;i+=2){let home=win(prev[i]), away=win(prev[i+1]); if(home===away) away=lose(prev[i+1])!==home?lose(prev[i+1]):lose(prev[i]); const alternatives=[home,away,lose(prev[i]),lose(prev[i+1])].filter(Boolean); if(used.has(home)) home=alternatives.find(t=>!used.has(t)&&t!==away)||home; if(used.has(away)||away===home) away=alternatives.find(t=>!used.has(t)&&t!==home)||away; addUnique(next,{stage,date:kodate(starts[r],i/2),home,away,confirmed:false},used,target)} next.sort((a,b)=>new Date(a.date)-new Date(b.date)); rounds.push(next)});
+      const confirmedThird=confirmedFor("3e place")[0]; let third;if(confirmedThird){third={...confirmedThird}}else{let thirdHome=lose(rounds[3][0]), thirdAway=lose(rounds[3][1]); if(thirdHome===thirdAway) thirdAway=win(rounds[3][1])!==thirdHome?win(rounds[3][1]):win(rounds[3][0]); third={stage:"3e place",date:"2026-07-18T21:00:00+02:00",home:thirdHome,away:thirdAway,confirmed:false}}
+      return{rounds,third}
     }
-    function matchHTML(m){const s=m.actual||m.predicted, v=verdict(m), cls=v?.kind||(m.actual?"real":""), hyp=!m.group; return `<article class="match ${hyp?"hypothetical":""}"><div class="team">${teamHTML(m.home)}<small>${m.group?"Groupe "+m.group:m.stage}</small></div><div class="score ${cls}">${s.home} - ${s.away}<small>${m.actual?"Score réel":"Pronostic "+m.predicted.confidence+"%"}</small>${m.actual?`<div class="prediction-line">Prono ${m.predicted.home} - ${m.predicted.away}</div>`:""}</div><div class="team away">${teamHTML(m.away)}<small>${fmt(m.date)}</small></div><div class="meta"><span class="pill">${m.stage}</span><span class="pill">Paris</span>${hyp?`<span class="pill hypothetical">Match hypothétique</span>`:""}${v?`<span class="pill ${v.kind}">${v.label}</span>`:""}${m.actual?.source?`<span class="pill">${m.actual.source}</span>`:""}</div><details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></article>`}
-    function dailyMatches(ko){const knockouts=ko.rounds.flat().map(m=>({...m,group:null,predicted:predict(m.home,m.away,m.stage),actual:null})); const third={...ko.third,group:null,predicted:predict(ko.third.home,ko.third.away,ko.third.stage),actual:null}; return [...state.matches,...knockouts,third].sort((a,b)=>new Date(a.date)-new Date(b.date))}
+    function matchHTML(m){const s=m.actual||m.predicted, v=verdict(m), cls=v?.kind||(m.actual?"real":""), hyp=!m.group&&!m.confirmed; return `<article class="match ${hyp?"hypothetical":""}"><div class="team">${teamHTML(m.home)}<small>${m.group?"Groupe "+m.group:m.stage}</small></div><div class="score ${cls}">${s.home} - ${s.away}<small>${m.actual?"Score réel":"Pronostic "+m.predicted.confidence+"%"}</small>${m.actual?`<div class="prediction-line">Prono ${m.predicted.home} - ${m.predicted.away}</div>`:""}</div><div class="team away">${teamHTML(m.away)}<small>${fmt(m.date)}</small></div><div class="meta"><span class="pill">${m.stage}</span><span class="pill">Paris</span>${hyp?`<span class="pill hypothetical">Match hypothétique</span>`:""}${m.confirmed?`<span class="pill exact">Rencontre confirmée</span>`:""}${v?`<span class="pill ${v.kind}">${v.label}</span>`:""}${m.actual?.source?`<span class="pill">${m.actual.source}</span>`:""}</div><details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></article>`}
+    function dailyMatches(ko){const knockouts=ko.rounds.flat().map(m=>({...m,group:null,predicted:predict(m.home,m.away,m.stage),actual:null,confirmed:!!m.confirmed})); const third={...ko.third,group:null,predicted:predict(ko.third.home,ko.third.away,ko.third.stage),actual:null,confirmed:!!ko.third.confirmed}; return [...state.matches,...knockouts,third].sort((a,b)=>new Date(a.date)-new Date(b.date))}
     function renderDaily(ko){
       const days={}; dailyMatches(ko).forEach(m=>{const d=dayKey(m.date); (days[d] ||= []).push(m)});
+      const entries=Object.entries(days);
       const heure=m=>new Intl.DateTimeFormat("fr-FR",{timeZone:TZ,hour:"2-digit",minute:"2-digit"}).format(new Date(m.date));
-      $("daily").innerHTML=Object.entries(days).map(([d,items])=>{
-        const tableRows=items.map(m=>{
-          const v=verdict(m), hyp=!m.group;
-          return `<tr><td>${heure(m)}</td><td>${m.group?"Groupe "+m.group:m.stage}${hyp?`<br><span class="pill hypothetical">Hypothétique</span>`:""}</td><td>${teamHTML(m.home)} - ${teamHTML(m.away)}<details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></td><td><strong>${m.actual?`${m.actual.home} - ${m.actual.away}`:"-"}</strong></td><td>${m.predicted.home} - ${m.predicted.away}</td><td>${v?`<span class="pill ${v.kind}">${v.label}</span>`:"À venir"}</td></tr>`;
-        }).join("");
-        const cards=items.map(m=>{
-          const v=verdict(m), hyp=!m.group;
-          const scoreReal=m.actual?`<div class="dc-score-box real">${m.actual.home}&ndash;${m.actual.away}</div><div class="dc-score-sep">▸</div>`:'' ;
-          const scorePred=`<div class="dc-score-box pred">${m.predicted.home}&ndash;${m.predicted.away}</div>`;
-          const verdictPill=v?`<span class="pill ${v.kind}">${v.label}</span>`:`<span class="pill">À venir</span>`;
-          const pronoPill=m.actual?`<span class="pill" style="font-size:.72rem;color:var(--muted)">Prono ${m.predicted.home}-${m.predicted.away}</span>`:"";
-          return `<div class="daily-card"><div class="daily-card-header"><span class="dc-phase">${m.group?"Gr."+m.group:m.stage}${hyp?' <span class="pill hypothetical">Hyp.</span>':""}</span><span>${heure(m)}</span></div><div class="daily-card-teams"><div class="daily-card-team">${teamHTML(m.home)}</div><div class="daily-card-scores">${scoreReal}${scorePred}</div><div class="daily-card-team right">${teamHTML(m.away)}</div></div><div class="daily-card-footer">${verdictPill}${pronoPill}</div><div class="daily-card-explain"><details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></div></div>`;
-        }).join("");
-        return `<section class="panel"><h2>${dayLabel(items[0].date)} <span style="color:var(--muted);font-weight:600">(${items.length} match${items.length>1?"es":""})</span></h2><table><thead><tr><th>Heure</th><th>Phase</th><th>Match</th><th>Score réel</th><th>Pronostic</th><th>Évaluation</th></tr></thead><tbody>${tableRows}</tbody></table>${cards}</section>`;
+      const shortDay=iso=>new Intl.DateTimeFormat("fr-FR",{timeZone:TZ,weekday:"short",day:"2-digit",month:"2-digit"}).format(new Date(iso));
+      const nav=`<section class="panel"><div class="day-jump"><span class="day-jump-label">Aller au jour</span>${entries.map(([d,items])=>`<a href="#day-${d}">${shortDay(items[0].date)}</a>`).join("")}</div></section>`;
+      const panels=entries.map(([d,items])=>{
+        const tableRows=items.map(m=>{const v=verdict(m), hyp=!m.group&&!m.confirmed; return `<tr><td>${heure(m)}</td><td>${m.group?"Groupe "+m.group:m.stage}${hyp?`<br><span class="pill hypothetical">Hypothétique</span>`:""}${m.confirmed?`<br><span class="pill exact">Confirmé</span>`:""}</td><td>${teamHTML(m.home)} - ${teamHTML(m.away)}<details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></td><td><strong>${m.actual?`${m.actual.home} - ${m.actual.away}`:"-"}</strong></td><td>${m.predicted.home} - ${m.predicted.away}</td><td>${v?`<span class="pill ${v.kind}">${v.label}</span>`:"À venir"}</td></tr>`;}).join("");
+        const cards=items.map(m=>{const v=verdict(m), hyp=!m.group&&!m.confirmed; const scoreReal=m.actual?`<div class="dc-score-box real">${m.actual.home}&ndash;${m.actual.away}</div><div class="dc-score-sep">▸</div>`:'' ; const scorePred=`<div class="dc-score-box pred">${m.predicted.home}&ndash;${m.predicted.away}</div>`; const verdictPill=v?`<span class="pill ${v.kind}">${v.label}</span>`:`<span class="pill">À venir</span>`; const pronoPill=m.actual?`<span class="pill" style="font-size:.72rem;color:var(--muted)">Prono ${m.predicted.home}-${m.predicted.away}</span>`:""; return `<div class="daily-card"><div class="daily-card-header"><span class="dc-phase">${m.group?"Gr."+m.group:m.stage}${hyp?' <span class="pill hypothetical">Hyp.</span>':""}${m.confirmed?' <span class="pill exact">Conf.</span>':""}</span><span>${heure(m)}</span></div><div class="daily-card-teams"><div class="daily-card-team">${teamHTML(m.home)}</div><div class="daily-card-scores">${scoreReal}${scorePred}</div><div class="daily-card-team right">${teamHTML(m.away)}</div></div><div class="daily-card-footer">${verdictPill}${pronoPill}</div><div class="daily-card-explain"><details class="explain"><summary>Pourquoi ce pronostic ?</summary><div class="why">${why(m)}</div></details></div></div>`;}).join("");
+        return `<section class="panel" id="day-${d}"><h2>${dayLabel(items[0].date)} <span style="color:var(--muted);font-weight:600">(${items.length} match${items.length>1?"es":""})</span></h2><table><thead><tr><th>Heure</th><th>Phase</th><th>Match</th><th>Score réel</th><th>Pronostic</th><th>Évaluation</th></tr></thead><tbody>${tableRows}</tbody></table>${cards}</section>`;
       }).join("");
+      $("daily").innerHTML=nav+panels;
     }
     function render(){const q=qual(), ko=kos(), champ=win(ko.rounds[4][0]), st=stats(), played=st.total, upcoming=state.matches.filter(m=>!m.actual).sort((a,b)=>new Date(a.date)-new Date(b.date)); $("dashboard").innerHTML=`<section class="panel"><div class="summary"><div class="metric"><strong>104</strong><span>matches, poules à finale</span></div><div class="metric"><strong>${played}</strong><span>scores réels intégrés</span></div><div class="metric"><strong>${st.successRate}%</strong><span>bons vainqueurs ou scores exacts</span></div><div class="metric"><strong>${st.exactRate}%</strong><span>scores complètement justes</span></div><div class="metric"><strong>${st.exact}</strong><span>pronostics exacts</span></div><div class="metric"><strong>${st.partial}</strong><span>vainqueurs justes</span></div><div class="metric"><strong>${st.wrong}</strong><span>pronostics faux</span></div><div class="metric"><strong>${teamHTML(champ)}</strong><span>vainqueur probable actuel</span></div></div></section><section class="panel half"><h2>Prochains matches</h2><div class="matches">${upcoming.slice(0,6).map(matchHTML).join("")}</div></section><section class="panel half"><h2>Scores et pronostics évalués</h2><div class="matches">${state.matches.filter(m=>m.actual).sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,6).map(matchHTML).join("")}</div></section>`;
       const selected=$("groupFilter").value, gs=selected=="all"?Object.keys(GROUPS):[selected]; $("groups").innerHTML=gs.map(g=>`<section class="panel half"><h2>Groupe ${g}</h2><table><thead><tr><th>Équipe</th><th>Pts</th><th>BP</th><th>BC</th><th>Diff.</th></tr></thead><tbody>${table(g).map(r=>`<tr><td>${teamHTML(r.team)}</td><td>${r.pts}</td><td>${r.gf}</td><td>${r.ga}</td><td>${r.gd}</td></tr>`).join("")}</tbody></table><div class="matches">${state.matches.filter(m=>m.group==g).map(matchHTML).join("")}</div></section>`).join("");
       renderDaily(ko); const list=selected=="all"?state.matches:state.matches.filter(m=>m.group==selected); $("allmatches").innerHTML=`<section class="panel"><h2>Tous les matches de groupes</h2><div class="matches">${list.map(matchHTML).join("")}</div></section>`;
-      const labels=["16èmes","8èmes","Quarts","Demies","Finale"]; $("bracket").innerHTML=`<section class="panel"><h2>Phase finale hypothétique</h2><div class="bracket"><div class="rounds">${ko.rounds.map((round,i)=>`<details class="round" ${i===0?"open":""}><summary>${labels[i]} <span>${round.length} match${round.length>1?"es":""}</span></summary><div class="round-body">${round.map(m=>{const p=predict(m.home,m.away,m.stage), w=p.home>=p.away?m.home:m.away; return `<div class="node hypothetical"><div>${teamHTML(m.home)}</div><div class="score">${p.home} - ${p.away}</div><div>${teamHTML(m.away)}</div><div class="winner">${teamHTML(w)}</div><small>${fmt(m.date)}</small><br><span class="pill hypothetical">Match hypothétique</span></div>`}).join("")}</div></details>`).join("")}<details class="round"><summary>3e place <span>1 match</span></summary><div class="round-body">${(()=>{const t=ko.third,p=predict(t.home,t.away,t.stage), w=p.home>=p.away?t.home:t.away;return `<div class="node hypothetical"><div>${teamHTML(t.home)}</div><div class="score">${p.home} - ${p.away}</div><div>${teamHTML(t.away)}</div><div class="winner">${teamHTML(w)}</div><small>${fmt(t.date)}</small><br><span class="pill hypothetical">Match hypothétique</span></div>`})()}</div></details></div></div></section>`;
-      $("method").innerHTML=`<section class="panel"><h2>Méthode</h2><div class="pad note">L’application pondère rang FIFA, forme de l’année écoulée et quelques confrontations historiques connues. À chaque chargement, elle tente de récupérer les scores via le scoreboard public ESPN, puis recalcule classements, meilleurs troisièmes, phase finale et pronostics. Les scores déjà passés remplacent les pronostics dans le modèle. Tous les horaires sont affichés dans le fuseau Paris, France. Les deux derniers matches d’un même groupe peuvent partager exactement le même horaire : c’est volontaire pour préserver l’équité sportive. Les données embarquées servent de secours si l’API n’est pas joignable.</div></section>`}
-    async function refresh(){const status=$("status"); status.textContent="Actualisation complète des scores passés..."; let found=0; try{const today=new Date(), end=new Date(Math.min(today.getTime(),new Date("2026-07-19T23:59:00+02:00").getTime())), days=[]; for(let d=new Date("2026-06-11T00:00:00+02:00");d<=end;d.setDate(d.getDate()+1))days.push(d.toISOString().slice(0,10).replaceAll("-","")); const leagues=["fifa.world","fifa.world.cup","fifa.world_cup"]; const urls=days.flatMap(day=>leagues.map(l=>`https://site.api.espn.com/apis/site/v2/sports/soccer/${l}/scoreboard?dates=${day}`)); const payloads=await Promise.all(urls.map(u=>fetch(u).then(r=>r.ok?r.json():null).catch(()=>null))); const teams=Object.values(GROUPS).flat(), aliases={"usa":"United States","united states of america":"United States","cote d ivoire":"Ivory Coast","côte d ivoire":"Ivory Coast","korea republic":"South Korea","republic of korea":"South Korea","czech republic":"Czechia","bosnia herzegovina":"Bosnia and Herzegovina","bosnia and herzegovina":"Bosnia and Herzegovina","dr congo":"DR Congo","congo dr":"DR Congo"}; const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim(); const matchTeam=name=>{const n=norm(name); if(aliases[n])return aliases[n]; return teams.find(t=>n===norm(t)||n.includes(norm(t))||norm(t).includes(n))}; payloads.flatMap(p=>p?.events||[]).forEach(ev=>{const c=ev.competitions?.[0]?.competitors||[]; if(c.length!=2||!ev.status?.type?.completed)return; const n0=c[0].team?.displayName||c[0].team?.shortDisplayName||c[0].team?.name,n1=c[1].team?.displayName||c[1].team?.shortDisplayName||c[1].team?.name, a=matchTeam(n0), b=matchTeam(n1), s0=Number(c[0].score),s1=Number(c[1].score); if(a&&b&&a!==b&&Number.isFinite(s0)&&Number.isFinite(s1)){state.actuals[k(a,b)]={team0:a,team1:b,score0:s0,score1:s1,source:"ESPN"}; found++}})}catch(e){console.warn(e)} build(); render(); const embedded=state.matches.filter(m=>m.actual?.source==="résultat embarqué").length; status.textContent=found?`${found} score(s) ESPN intégré(s), ${embedded} score(s) de secours conservé(s). Bracket recalculé.`:`API indisponible ou incomplète : ${embedded} score(s) embarqué(s) jusqu’aux matches déjà passés, pronostics recalculés.`}
+      const labels=["16èmes","8èmes","Quarts","Demies","Finale"]; $("bracket").innerHTML=`<section class="panel"><h2>Phase finale hypothétique</h2><div class="bracket"><div class="rounds">${ko.rounds.map((round,i)=>`<details class="round" ${i===0?"open":""}><summary>${labels[i]} <span>${round.length} match${round.length>1?"es":""}</span></summary><div class="round-body">${round.map(m=>{const p=predict(m.home,m.away,m.stage), w=p.home>=p.away?m.home:m.away; return `<div class="node ${m.confirmed?"":"hypothetical"}"><div>${teamHTML(m.home)}</div><div class="score">${p.home} - ${p.away}</div><div>${teamHTML(m.away)}</div><div class="winner">${teamHTML(w)}</div><small>${fmt(m.date)}</small><br>${m.confirmed?`<span class="pill exact">Rencontre confirmée</span>`:`<span class="pill hypothetical">Match hypothétique</span>`}</div>`}).join("")}</div></details>`).join("")}<details class="round"><summary>3e place <span>1 match</span></summary><div class="round-body">${(()=>{const t=ko.third,p=predict(t.home,t.away,t.stage), w=p.home>=p.away?t.home:t.away;return `<div class="node hypothetical"><div>${teamHTML(t.home)}</div><div class="score">${p.home} - ${p.away}</div><div>${teamHTML(t.away)}</div><div class="winner">${teamHTML(w)}</div><small>${fmt(t.date)}</small><br><span class="pill hypothetical">Match hypothétique</span></div>`})()}</div></details></div></div></section>`;
+      $("method").innerHTML=`<section class="panel"><h2>Méthode</h2><div class="pad note">L’application pondère rang FIFA, forme de l’année écoulée et quelques confrontations historiques connues. À chaque chargement, elle tente de récupérer les scores et les rencontres officiellement connues via le scoreboard public ESPN, puis recalcule classements, meilleurs troisièmes, phase finale et pronostics. Les scores déjà passés remplacent les pronostics dans le modèle ; le matching ESPN est renforcé par des alias pays, un fallback sur le nom d’événement et les statuts Full Time. Tous les horaires sont affichés dans le fuseau Paris, France. Les deux derniers matches d’un même groupe peuvent partager exactement le même horaire : c’est volontaire pour préserver l’équité sportive. Les données embarquées servent de secours si l’API n’est pas joignable.</div></section>`}
+    async function refresh(){
+      const status=$("status"); status.textContent="Actualisation ESPN : scores, calendrier confirmé et phase finale..."; let found=0;
+      try{
+        state.espnEvents=[]; state.confirmedKO=[]; state.unmatchedESPN=[];
+        const days=[]; for(let d=new Date("2026-06-11T00:00:00+02:00");d<=new Date("2026-07-19T23:59:00+02:00");d.setDate(d.getDate()+1))days.push(d.toISOString().slice(0,10).replaceAll("-",""));
+        const leagues=["fifa.world","fifa.world.cup","fifa.world_cup"];
+        const urls=days.flatMap(day=>leagues.map(l=>`https://site.api.espn.com/apis/site/v2/sports/soccer/${l}/scoreboard?dates=${day}&limit=1000`));
+        const payloads=await Promise.all(urls.map(u=>fetch(u).then(r=>r.ok?r.json():null).catch(()=>null)));
+        const byId=new Map(); payloads.flatMap(p=>p?.events||[]).forEach(ev=>{if(ev?.id&&!byId.has(ev.id))byId.set(ev.id,ev)});
+        const events=[...byId.values()]; state.espnEvents=events; state.confirmedKO=extractConfirmedKO(events);
+        const scored=new Set();
+        events.forEach(ev=>{
+          const c=ev.competitions?.[0]?.competitors||[]; if(c.length!==2)return;
+          const [a,b]=eventTeams(ev);
+          if(!a||!b){state.unmatchedESPN.push(ev.name||ev.shortName||ev.id); return;}
+          if(!isCompletedEvent(ev))return;
+          const s0=Number(c[0].score), s1=Number(c[1].score);
+          if(a!==b&&Number.isFinite(s0)&&Number.isFinite(s1)){state.actuals[k(a,b)]={team0:a,team1:b,score0:s0,score1:s1,source:"ESPN"}; const sk=k(a,b); if(!scored.has(sk)){scored.add(sk); found++}}
+        });
+      }catch(e){console.warn(e)}
+      build(); render();
+      const embedded=state.matches.filter(m=>m.actual?.source==="résultat embarqué").length, confirmed=state.confirmedKO.length, unmatched=state.unmatchedESPN.length;
+      status.textContent=found||confirmed?`${found} score(s) ESPN intégré(s), ${confirmed} rencontre(s) de phase finale confirmée(s), ${embedded} score(s) de secours. Bracket recalculé sans doublon.${unmatched?` ${unmatched} libellé(s) ESPN non reconnu(s).`:""}`:`API indisponible ou incomplète : ${embedded} score(s) embarqué(s), phase finale recalculée par pronostic.`;
+    }
     function init(){const f=$("groupFilter"); f.innerHTML=`<option value="all">Tous les groupes</option>`+Object.keys(GROUPS).map(g=>`<option value="${g}">Groupe ${g}</option>`).join(""); build(); render(); refresh(); $("refresh").onclick=refresh; f.onchange=render; document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".view").forEach(x=>x.classList.add("hidden"));b.classList.add("active");$(b.dataset.view).classList.remove("hidden")})}
     init();
   </script>
